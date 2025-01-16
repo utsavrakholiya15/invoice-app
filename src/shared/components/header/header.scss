@@ -1,0 +1,35 @@
+header {
+  width: 700px;
+  background: var(--light-purple);
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 36px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-icon {
+  width: 54px;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background: var(--x-light-purple);
+  border-radius: 4px 4px 18px 4px;
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+.header-user{
+    // background: rgba(159, 115, 115, 0.457);
+    width: 75px;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.147);
+    svg{
+        width: 20px;
+        height: 20px;
+        fill: rgba(255, 255, 255, 0.779);
+    }
+}

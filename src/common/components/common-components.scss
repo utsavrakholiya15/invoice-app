@@ -1,0 +1,36 @@
+@import "../../scss/main.scss";
+
+.paid {
+  width: 100px;
+  height: 40px;
+  background: #1d2b40;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4db09b;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+.pending {
+  width: 100px;
+  height: 40px;
+  background: #292938;
+  font-size: 13px;
+  font-weight: 500;
+  color: #f79a20;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  svg {
+    width: 10px;
+    height: 10px;
+  }
+}

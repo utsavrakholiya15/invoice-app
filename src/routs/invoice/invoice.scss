@@ -1,0 +1,302 @@
+@import "../../scss/main.scss";
+
+.iv {
+  width: 710px;
+  margin-inline: auto;
+  margin-top: 30px;
+  // border: 1px solid rgba(255, 255, 255, 0.171);
+  position: relative;
+}
+.iv-top {
+  display: flex;
+  justify-content: space-between;
+}
+.iv-title {
+  h2 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 13px;
+    color: #b3b4c7;
+  }
+}
+.iv-controls {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  .iv-filter {
+    color: rgba(255, 255, 255, 0.775);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--x-light-purple);
+    }
+  }
+  button {
+    padding: 10px 15px;
+    border-radius: 28px;
+    border: none;
+    background: var(--x-light-purple);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 1px;
+    }
+  }
+}
+.iv-bottom {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.iv-item {
+  position: relative;
+  width: 100%;
+  padding: 12px 38px 12px 30px;
+  background: var(--light-purple);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  .iv-item-number {
+    width: 20px;
+    font-size: 16px;
+  }
+  .iv-item-date {
+    color: #b3b4c7;
+    font-size: 14px;
+  }
+  .iv-item-name {
+    min-width: 80px;
+    color: #b3b4c7;
+    font-size: 14px;
+  }
+  .iv-item-amount {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    font-size: 16px;
+  }
+  .iv-item-arrowRight {
+    position: absolute;
+    top: 22px;
+    right: 10px;
+    color: var(--x-light-purple);
+  }
+}
+.iv-adder-parent {
+  // display: none;
+  position: absolute;
+  width: 100%;
+  background: #0000007b;
+  top: 0;
+  left: 0;
+  .iv-adder {
+    scrollbar-width: 5px !important;
+    scroll-behavior: smooth;
+    height: 100vh;
+    overflow-y: scroll;
+    user-select: none;
+    margin-inline: auto;
+    width: 630px;
+    background: var(--dark-purple);
+    border-radius: 16px;
+    padding: 28px;
+    animation: fade 0.2s ease-in-out forwards;
+  }
+}
+.iv-adder-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    font-size: 28px;
+    font-weight: 500;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 170px;
+      height: 3px;
+      background: var(--x-light-purple);
+      border-radius: 52px;
+    }
+  }
+  .iv-adder-close {
+    background: var(--light-purple);
+    color: var(--x-light-purple);
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    margin-top: 10px;
+    cursor: pointer;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.iv-adder-billFrom {
+  margin-top: 35px;
+  h4 {
+    color: var(--x-light-purple);
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.iv-adder-billTo {
+  margin-top: 20px;
+  h4 {
+    color: var(--x-light-purple);
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.iv-adder-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.iv-adder-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+}
+.iv-adder-input {
+  @include adder-input;
+}
+.iv-adder-select {
+  @include adder-select;
+}
+.input-list {
+  margin-top: 20px;
+  h4 {
+    color: grey;
+    font-size: 16px;
+  }
+}
+.input-list-btn {
+  margin-top: 25px;
+  text-align: center;
+  button {
+    background: var(--light-purple);
+    padding: 8px 30px;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+}
+.input-list-title-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 35% 8% 15% 15% 1fr;
+  gap: 25px;
+  .input-list-title {
+    width: 100%;
+    color: #b3b4c7;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+}
+.input-list-items-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 35% 8% 15% 15% 1fr;
+  gap: 25px;
+  .input-list-item {
+    background: var(--light-purple);
+    width: 100%;
+    color: #b3b4c7;
+    border-radius: 12px;
+    border: 1px solid var(--light-purple);
+    height: 35px;
+    padding: 6px 8px;
+    font-size: 13px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    &:focus {
+      border: 1px solid var(--x-light-purple);
+    }
+  }
+}
+.input-total {
+  background-color: transparent !important;
+  border: none !important;
+}
+.input-delete {
+  background: transparent !important;
+  cursor: pointer;
+  display: flex;
+  border: none !important;
+  justify-content: end;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+.iv-adder-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
+  button{
+    transition: .3s ease-in-out;
+  }
+  button:first-child {
+    background: var(--light-purple);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 16px;
+  }
+  button:last-child {
+    padding: 8px 20px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    background: var(--x-light-purple);
+    border: none;
+    font-weight: 500;
+    border-radius: 16px;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
