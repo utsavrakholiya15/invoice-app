@@ -5,7 +5,6 @@ import { FaAngleDown } from "react-icons/fa6";
 import { BsCurrencyRupee } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
 import { v4 as uuidv4 } from "uuid";
-import { FaCircle } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { getData, setData } from "../../common/utils/storage";
@@ -23,6 +22,8 @@ export default function Invoice() {
   // states //
 
   const navigate = useNavigate();
+  const [filterFlag, setFilterFlag] = useState(false);
+  // const [filter, setFilter] = useState("");
   const [refreshFlag, setrefreshFlag] = useState(false);
   const [storedData, setStoredData] = useState(getData("invoices") || []);
   const inputRefs = useRef([]);
@@ -91,7 +92,7 @@ export default function Invoice() {
     return newDate.toISOString().slice(0, 10);
   };
   // console.log("output****",calculateFutureDate("2025-02-28",30));
-
+  // const handleOnFilter = () => {};
   const clearForm = () => {
     setitems([]);
     setbfData({
@@ -179,7 +180,12 @@ export default function Invoice() {
             <p>There are {storedData.length} total invoice</p>
           </div>
           <div className="iv-controls">
-            <div className="iv-filter">
+            <div
+              onClick={() => {
+                setFilterFlag((pre) => !pre);
+              }}
+              className="iv-filter"
+            >
               Filter by status <FaAngleDown />
             </div>
             <button

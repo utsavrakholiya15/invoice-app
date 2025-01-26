@@ -18,6 +18,15 @@
     display: flex;
     gap: 15px;
     align-items: center;
+    .edit-title-buttons-edit{
+      padding: 10px 16px;
+      border-radius: 28px;
+      background: grey;
+      color: white;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+    }
     .edit-title-buttons-delete {
       padding: 10px 16px;
       background: #982325;
